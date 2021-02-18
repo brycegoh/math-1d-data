@@ -1,0 +1,17 @@
+{
+  "name": "math1d",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "graceful-fs": "^4.2.6",
+    "object-to-csv": "^1.0.5",
+    "utm": "^1.1.1"
+  }
+}
