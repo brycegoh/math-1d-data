@@ -11,7 +11,7 @@ const api = axios.create({
 
 const getData = async () => {
 
-    fs.writeFile("./data.csv", "longitude,latitude,coord_x,coord_y,coord_easting,coord_northing,time,dt,co,no,o3,so2,pm2_5,pm10,nh3\n", function(err) {
+    fs.writeFile("./data.csv", "longitude,latitude,coord_x,coord_y,coord_easting,coord_northing,time,dt,co,no,no2,o3,so2,pm2_5,pm10,nh3\n", function(err) {
         if(err) {
             return console.log(err);
         }
@@ -52,7 +52,7 @@ const getData = async () => {
 
                                 let time = new Date(dataPoint.dt * 1000)  //epoch
 
-                                fs.appendFile('./data.csv', `${data.coord.lon},${data.coord.lat},${newEasting - easting},${newNorthing - northing},${newEasting},${newNorthing},${time},${dataPoint.dt},${dataPoint.components.co},${dataPoint.components.no},${dataPoint.components.o3},${dataPoint.components.so2},${dataPoint.components.pm2_5},${dataPoint.components.pm10},${dataPoint.components.nh3}\n`, function (err) {
+                                fs.appendFile('./data.csv', `${data.coord.lon},${data.coord.lat},${newEasting - easting},${newNorthing - northing},${newEasting},${newNorthing},${time},${dataPoint.dt},${dataPoint.components.co},${dataPoint.components.no},${dataPoint.components.no2},${dataPoint.components.o3},${dataPoint.components.so2},${dataPoint.components.pm2_5},${dataPoint.components.pm10},${dataPoint.components.nh3}\n`, function (err) {
                                     if (err) throw err;
                                     // console.log('Saved!');
                                 });
@@ -92,7 +92,7 @@ const getData = async () => {
 
                                         const time2 = new Date(dataPoint.dt * 1000)  //epoch
 
-                                        fs.appendFile('./data.csv', `${data.coord.lon},${data.coord.lat},${newEasting - easting},${northing - secondNewNorthing},${newEasting},${secondNewNorthing},${time2},${dataPoint.dt},${dataPoint.components.co},${dataPoint.components.no},${dataPoint.components.o3},${dataPoint.components.so2},${dataPoint.components.pm2_5},${dataPoint.components.pm10},${dataPoint.components.nh3}\n`, function (err) {
+                                        fs.appendFile('./data.csv', `${data.coord.lon},${data.coord.lat},${newEasting - easting},${northing - secondNewNorthing},${newEasting},${secondNewNorthing},${time2},${dataPoint.dt},${dataPoint.components.co},${dataPoint.components.no},${dataPoint.components.no2},${dataPoint.components.o3},${dataPoint.components.so2},${dataPoint.components.pm2_5},${dataPoint.components.pm10},${dataPoint.components.nh3}\n`, function (err) {
                                             if (err) throw err;
                                             // console.log('Saved!');
                                         });
