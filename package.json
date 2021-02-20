@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "axios-delay": "^1.0.0-rc6",
     "graceful-fs": "^4.2.6",
     "object-to-csv": "^1.0.5",
     "utm": "^1.1.1"
